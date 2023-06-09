@@ -1,0 +1,31 @@
+// Projector's format that's supported by "builtin" loader
+// The whole file is just a json array of configuration objects (see README.md for it's specs)
+[
+  {
+    "name": "Cmake debug",
+    "group": "cmake",
+    "dependencies": ["project.cmake.cmake build"],
+    "type": "cppdbg",
+    "request": "launch",
+    "program": "${workspaceFolder}/build/main/programmingInLua.exe",
+    "cwd": "${workspaceFolder}/main",
+    "stopAtEntry": true,
+    "console": "integratedTerminal"
+  },
+  {
+    "name": "cmake build",
+    "group": "cmake",
+    "command": "cmake -Bbuild -S. -G 'Unix Makefiles' && cmake --build build"
+  },
+  {
+    "name": "Debug prototest",
+    "group": "test",
+    "type": "cppdbg",
+    "request": "launch",
+    "program": "${workspaceFolder}/build/main/programmingInLua.exe",
+    "cwd": "${workspaceFolder}",
+    "console": "integratedTerminal",
+    "stopAtEntry": true,
+    "showLog": false
+  }
+]
